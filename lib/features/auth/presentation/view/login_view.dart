@@ -12,6 +12,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/common_widgets/app_background_image.dart';
 import '../../../../core/utils/app_strings.dart';
 import 'widgets/auth_container.dart';
+import 'widgets/parents_section.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -44,7 +45,7 @@ class LoginView extends StatelessWidget {
                             padding: EdgeInsets.only(right: 11.w),
                             child: Text(
                               AppLocalization.loginHeroNameTitle,
-                              style: AppTextStyles.loginFieldLabel,
+                              style: AppTextStyles.authFieldLabel,
                             ),
                           ),
                           SizedBox(height: 8.h),
@@ -62,36 +63,7 @@ class LoginView extends StatelessWidget {
                             thickness: 3,
                           ),
                           SizedBox(height: 25.h),
-                          Padding(
-                            padding: EdgeInsets.only(right: 11.w),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Text(
-                                  AppLocalization.loginParentsSectionTitle,
-                                  style: AppTextStyles.loginSectionLabel,
-                                ),
-                                SizedBox(width: 8.w),
-                                Image.asset(AppStrings.parentsIcon),
-                              ],
-                            ),
-                          ),
-                          SizedBox(height: 16.h),
-                          AuthTextFormField(
-                            validator: (value) => Validation.validateEmail(value!),
-                            borderRadius: 48.r,
-                            suffixIcon: AppStrings.emailIcon,
-                            hint: AppLocalization.loginEmailHint,
-                            keyboardType: TextInputType.emailAddress,
-                          ),
-                          SizedBox(height: 16.h),
-                          AuthTextFormField(
-                            validator: (value) => Validation.validatePhone(value!),
-                            borderRadius: 48.r,
-                            suffixIcon: AppStrings.phoneIcon,
-                            hint: AppLocalization.loginPhoneHint,
-                            keyboardType: TextInputType.phone,
-                          ),
+                          ParentsSection(),
                         ],
                       ),
                     ),
@@ -115,3 +87,4 @@ class LoginView extends StatelessWidget {
     );
   }
 }
+

@@ -48,7 +48,7 @@ abstract final class AppTextStyles {
   );
 
 // Login Field Label
-  static final TextStyle loginFieldLabel = GoogleFonts.lexend(
+  static final TextStyle authFieldLabel = GoogleFonts.lexend(
     fontSize: 16.sp,
     fontWeight: FontWeight.w700,
     letterSpacing: 0,
@@ -71,6 +71,70 @@ abstract final class AppTextStyles {
     fontWeight: FontWeight.w700,
     letterSpacing: 0,
     height: 1.2,
+    color: AppColors.loginParentsTxt,
+  );
+
+  /// Register Screen
+
+  static final TextStyle registerGenderLabel = GoogleFonts.tajawal(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w700,
+    letterSpacing: 0,
+    height: 1.5,
+    color: AppColors.registerGenderTxt,
+  );
+
+  static final TextStyle waveData = GoogleFonts.tajawal(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w700,
+    letterSpacing: 0,
+    height: 1.5,
+    color: AppColors.waveData,
+  );
+
+  static final TextStyle subWaveData = GoogleFonts.tajawal(
+    fontSize: 10.sp,
+    fontWeight: FontWeight.w400,
+    letterSpacing: 0,
+    height: 1.5,
+    color: AppColors.subWaveData,
+  );
+
+  static final TextStyle teacher = GoogleFonts.tajawal(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w700,
+    letterSpacing: 0,
+    height: 1.56,
+  );
+
+  static final TextStyle subTeacher = GoogleFonts.tajawal(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    letterSpacing: 0,
+    height: 1.33,
+    color: AppColors.subWaveData,
+  );
+
+  static final TextStyle selectLanguageButton = GoogleFonts.lexend(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w400,
+    letterSpacing: 0,
+    height: 1.5,
+  );
+
+  static final TextStyle selectLanguageTitle = GoogleFonts.lexend(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w700,
+    letterSpacing: 0,
+    height: 1.2,
+    color: AppColors.loginTxt,
+  );
+
+  static TextStyle languageText = GoogleFonts.lexend(
+    fontWeight: FontWeight.w700,
+    fontSize: 14.sp,
+    height: 1.2,
+    letterSpacing: 0,
     color: AppColors.loginParentsTxt,
   );
 }

@@ -17,4 +17,20 @@ abstract final class AppColors {
   static const Color authContainerBG = Color(0xFFF6F4E7);
   static const Color iconContainerBG = Color(0xFFFCD400);
 
+  static const Color registerGenderTxt = Color(0xFF374151);
+  static const Color selectedBorder = Color(0xFFFCD400);
+  static const Color waveData = Color(0xFF1E73BE);
+  static const Color subWaveData = Color(0xFF9CA3AF);
+  static const Color teacherMale = Color(0xFF3B82F6);
+  static const Color teacherFemale = Color(0xFFEC4899);
+
+
+
+
+  // Button Language in register screen
+  static const Color backgroundColor = Color(0xFFF5F3E7);
+  static const Color primaryColor = Color(0xFF00AEEF);
+  static const Color titleColor = Color(0xFF006F96);
+  static const Color unselectedColor = Color(0xFFE5E3D7);
+  static const Color shadowColor = Color(0xFFB8C6CE);
 }
