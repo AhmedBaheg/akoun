@@ -137,4 +137,21 @@ abstract final class AppTextStyles {
     letterSpacing: 0,
     color: AppColors.loginParentsTxt,
   );
+
+  /// Intro Screen
+  static final TextStyle introText = GoogleFonts.tajawal(
+    fontSize: 24.sp,
+    fontWeight: FontWeight.w400,
+    letterSpacing: 0,
+    height: 1.0,
+    color: AppColors.introText,
+  );
+
+  static final TextStyle introButton = GoogleFonts.notoSansArabic(
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w400,
+    letterSpacing: 0,
+    height: 1.0,
+    color: AppColors.withe,
+  );
 }

@@ -1,6 +1,8 @@
+import 'package:akoun/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/theme/app_text_styles.dart';
 import '../../../../../core/utils/app_localization.dart';
 import '../../../../../core/utils/app_strings.dart';
 
@@ -19,11 +21,12 @@ class IntroWelcomeContent extends StatelessWidget {
                 left: 0,
                 child: Container(
                   width: 275.w,
-                  height: 398.h,
+                  height: 500.h,
+                  margin: EdgeInsets.only(left: 10.w),
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(AppStrings.introMale),
-                      fit: BoxFit.contain,
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),
@@ -51,7 +54,7 @@ class IntroWelcomeContent extends StatelessWidget {
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
               fixedSize: Size(129.w, 41.h),
-              backgroundColor: Colors.yellow,
+              backgroundColor: AppColors.introButton,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15.r),
               ),
@@ -60,7 +63,7 @@ class IntroWelcomeContent extends StatelessWidget {
             onPressed: () {},
             child: Text(
               AppLocalization.introTextBtn,
-              style: TextStyle(fontSize: 20.sp, color: Colors.white),
+              style: AppTextStyles.introButton,
             ),
           ),
         ),

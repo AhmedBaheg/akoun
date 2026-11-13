@@ -1,8 +1,11 @@
+import 'package:akoun/features/auth/presentation/view/widgets/auth_teacher_type_section.dart';
 import 'package:akoun/features/intro/presentation/view/widgets/intro_welcome_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/utils/app_localization.dart';
 import '../../../../core/utils/app_strings.dart';
 
@@ -11,6 +14,7 @@ class IntroView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final teacherType = GoRouterState.of(context).extra;
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -24,34 +28,31 @@ class IntroView extends StatelessWidget {
         ),
         child: Stack(
           children: [
-            IntroWelcomeContent(isMale: true,),
+            IntroWelcomeContent(
+              isMale: teacherType == TeacherType.male.toString(),
+            ),
             Positioned(
-                top: 195.h,
-                right: 51.w,
-                child: Container(
-                  width: 225.w,
-                  height: 182.h,
-                  padding: EdgeInsets.only(
-                    left: 14.w,
-                    right: 4.w,
-                    top: 33.h,
-                    bottom: 33.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: 0.65),
-                    borderRadius: BorderRadius.circular(30.r),
-                  ),
-                  child: Text(
-                    AppLocalization.introText,
-                    textAlign: TextAlign.right,
-                    style: GoogleFonts.tajawal(
-                      fontSize: 24.sp,
-                      fontWeight: FontWeight.w400,
-                      height: 1.0,
-                      letterSpacing: 0,
-                    ),
-                  ),
+              top: 195.h,
+              right: 51.w,
+              child: Container(
+                width: 225.w,
+                height: 182.h,
+                padding: EdgeInsets.only(
+                  left: 14.w,
+                  right: 4.w,
+                  top: 33.h,
+                  bottom: 33.h,
                 ),
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.65),
+                  borderRadius: BorderRadius.circular(30.r),
+                ),
+                child: Text(
+                  AppLocalization.introText,
+                  textAlign: TextAlign.right,
+                  style: AppTextStyles.introText,
+                ),
+              ),
             ),
           ],
         ),

@@ -1,81 +1,97 @@
+
 import 'package:flutter/cupertino.dart';
 
+import '../../features/auth/presentation/view/widgets/auth_gender_section.dart';
+import '../../features/auth/presentation/view/widgets/auth_teacher_type_section.dart';
+
 class Validation {
-  static String? validateName(String value) {
-    if (value.isEmpty || value == null) {
-      return 'Please enter your name';
+  static String? validateName(String? value) {
+    if (value == null || value.trim().isEmpty) {
+      return 'من فضلك أدخل الاسم';
     }
     return null;
   }
 
   static bool _isEmailValid(String email) {
-    // Basic email validation using regex
-    // You can implement more complex validation if needed
-    return RegExp(r'^[\w-\.]+@[a-zA-Z]+\.[a-zA-Z]{2,}$').hasMatch(email);
+    return RegExp(r'^[\w.-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$')
+        .hasMatch(email);
   }
 
-  static String? validateEmail(String value) {
-    if (value.isEmpty) {
-      return 'Please enter your email';
+  static String? validateEmail(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'من فضلك أدخل البريد الإلكتروني';
     } else if (!_isEmailValid(value)) {
-      return 'Please enter a valid email';
+      return 'من فضلك أدخل بريد إلكتروني صحيح';
     }
     return null;
   }
 
-  static String? validatePassword(String value) {
-    if (value.isEmpty) {
-      return 'Please enter a password';
+  static String? validatePassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'من فضلك أدخل كلمة المرور';
     } else if (value.length < 6) {
-      return 'Password must be at least 6 characters long';
+      return 'كلمة المرور يجب ألا تقل عن 6 أحرف';
     }
     return null;
   }
 
-  static String? validateConfirmPassword(String value,
-      {TextEditingController? passwordController}) {
-    if (value.isEmpty) {
-      return 'Please enter a password';
+  static String? validateConfirmPassword(
+      String? value, {
+        TextEditingController? passwordController,
+      }) {
+    if (value == null || value.isEmpty) {
+      return 'من فضلك أدخل كلمة المرور';
     } else if (value.length < 6) {
-      return 'Password must be at least 6 characters long';
+      return 'كلمة المرور يجب ألا تقل عن 6 أحرف';
     } else if (value != passwordController?.text) {
-      return 'Passwords do not match';
+      return 'كلمتا المرور غير متطابقتين';
     }
     return null;
   }
 
-  static String? validatePhone(String value) {
-    if (value.isEmpty) {
-      return 'Please enter your phone number';
+  static String? validatePhone(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'من فضلك أدخل رقم الهاتف';
     } else if (!_isValidPhoneNumber(value)) {
-      return 'Please enter a valid phone number';
+      return 'من فضلك أدخل رقم هاتف صحيح';
     }
     return null;
   }
 
   static bool _isValidPhoneNumber(String phoneNumber) {
-    // Define the regex pattern for a valid phone number
     const pattern = r'^[+]?[0-9]{10,13}$';
-    final regex = RegExp(pattern);
-
-    // Check if the phone number matches the pattern
-    return regex.hasMatch(phoneNumber);
+    return RegExp(pattern).hasMatch(phoneNumber);
   }
 
   static String? validateDropdown(String? value) {
     if (value == null) {
-      return 'Please select an option';
+      return 'من فضلك اختر أحد الخيارات';
     }
-    return null; // Valid selection
+    return null;
   }
 
   static String? otpValidator(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Required';
+      return 'هذا الحقل مطلوب';
     }
     if (!RegExp(r'^\d$').hasMatch(value)) {
-      return 'Must be a digit';
+      return 'يجب إدخال رقم صحيح';
     }
-    return null; // Valid input
+    return null;
+  }
+
+  // Teacher Type Validation
+  static String? validateTeacherType(TeacherType? value) {
+    if (value == null) {
+      return 'من فضلك اختر نوع المدرّس';
+    }
+    return null;
+  }
+
+  static String? validateGender(Gender? value) {
+    if (value == null) {
+      return 'من فضلك اختر النوع';
+    }
+    return null;
   }
 }

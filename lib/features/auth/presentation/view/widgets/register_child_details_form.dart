@@ -30,7 +30,7 @@ class RegisterChildDetailsForm extends StatelessWidget {
         AuthTextFormField(
           validator: (value) => Validation.validateName(value!),
           borderRadius: 16.r,
-          suffixIcon: AppStrings.personIcon,
+          prefixIcon: AppStrings.personIcon,
           hint: AppLocalization.registerHeroNameHint,
         ),
 
@@ -47,7 +47,7 @@ class RegisterChildDetailsForm extends StatelessWidget {
         AuthTextFormField(
           validator: (value) => Validation.validateName(value!),
           borderRadius: 16.r,
-          suffixIcon: AppStrings.ageIcon,
+          prefixIcon: AppStrings.ageIcon,
           hint: AppLocalization.registerAgeHint,
         ),
 

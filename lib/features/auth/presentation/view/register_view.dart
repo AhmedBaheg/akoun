@@ -1,3 +1,4 @@
+import 'package:akoun/core/router/app_router.dart';
 import 'package:akoun/core/theme/app_colors.dart';
 import 'package:akoun/features/auth/presentation/view/widgets/auth_container.dart';
 import 'package:akoun/features/auth/presentation/view/widgets/auth_dashed_divider.dart';
@@ -7,6 +8,7 @@ import 'package:akoun/features/auth/presentation/view/widgets/language_selection
 import 'package:akoun/features/auth/presentation/view/widgets/parents_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/common_widgets/app_3d_button.dart';
 import '../../../../core/common_widgets/app_background_image.dart';
@@ -21,6 +23,9 @@ class RegisterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+    String teacherType = '';
+
     return Scaffold(
       body: AppBackgroundImage(
         image: AppStrings.registerBg,
@@ -35,63 +40,76 @@ class RegisterView extends StatelessWidget {
                 AuthTextHeader(),
                 SizedBox(height: 48.h),
                 AuthContainer(
-                  child: Column(
-                    children: [
-                      RegisterChildDetailsForm(),
-                      SizedBox(height: 40.h),
-                      Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          AuthDashedDivider(
-                            color: AppColors.borders,
-                            dashWidth: 3,
-                            dashSpace: 4,
-                            thickness: 2,
-                          ),
+                  child: Form(
+                    key: formKey,
+                    child: Column(
+                      children: [
+                        RegisterChildDetailsForm(),
 
-                          Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                AppLocalization.registerWaveDataTitle,
-                                style: AppTextStyles.waveData,
-                              ),
-                              SizedBox(width: 8.w),
-                              Image.asset(AppStrings.waveDataIcon),
-                            ],
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 26.h),
-                      Text(
-                        AppLocalization.registerWaveDataSubtitle,
-                        style: AppTextStyles.subWaveData,
-                      ),
-                      SizedBox(height: 16.h),
-                      AuthTeacherTypeSection(),
-                      SizedBox(height: 23.h),
-                      LanguageSelectionWidget(),
-                      SizedBox(height: 23.h),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Text(
-                          AppLocalization.registerDialectTitle,
-                          style: AppTextStyles.selectLanguageTitle,
+                        SizedBox(height: 40.h),
+                        Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            AuthDashedDivider(
+                              color: AppColors.borders,
+                              dashWidth: 3,
+                              dashSpace: 4,
+                              thickness: 2,
+                            ),
+
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  AppLocalization.registerWaveDataTitle,
+                                  style: AppTextStyles.waveData,
+                                ),
+                                SizedBox(width: 8.w),
+                                Image.asset(AppStrings.waveDataIcon),
+                              ],
+                            ),
+                          ],
                         ),
-                      ),
-                      SizedBox(height: 23.h),
-                      AuthLanguageSection(),
-                      SizedBox(height: 25.h),
-                      AuthDashedDivider(
-                        color: AppColors.borders,
-                        dashWidth: 4,
-                        dashSpace: 8,
-                        thickness: 3,
-                      ),
-                      SizedBox(height: 25.h),
-                      ParentsSection(),
 
-                    ],
+                        SizedBox(height: 26.h),
+                        Text(
+                          AppLocalization.registerWaveDataSubtitle,
+                          style: AppTextStyles.subWaveData,
+                        ),
+
+                        SizedBox(height: 16.h),
+                        AuthTeacherTypeSection(
+                          onChanged: (value) {
+                            teacherType = value.toString();
+                          },
+                        ),
+
+                        SizedBox(height: 23.h),
+                        LanguageSelectionWidget(),
+
+                        SizedBox(height: 23.h),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Text(
+                            AppLocalization.registerDialectTitle,
+                            style: AppTextStyles.selectLanguageTitle,
+                          ),
+                        ),
+
+                        SizedBox(height: 23.h),
+                        AuthLanguageSection(),
+
+                        SizedBox(height: 25.h),
+                        AuthDashedDivider(
+                          color: AppColors.borders,
+                          dashWidth: 4,
+                          dashSpace: 8,
+                          thickness: 3,
+                        ),
+                        SizedBox(height: 25.h),
+                        ParentsSection(borderRadius: 16),
+                      ],
+                    ),
                   ),
                 ),
 
@@ -100,9 +118,10 @@ class RegisterView extends StatelessWidget {
                   title: AppLocalization.loginStartButton,
                   icon: AppStrings.authIcon,
                   onPressed: () {
-                    // if (formKey.currentState!.validate()) {
-                    //   formKey.currentState!.save();
-                    // }
+                    if (formKey.currentState!.validate()) {
+                      formKey.currentState!.save();
+                      context.go(AppRouter.introView, extra: teacherType);
+                    }
                   },
                 ),
               ],

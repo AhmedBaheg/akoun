@@ -9,8 +9,10 @@ import 'auth_text_form_field.dart';
 
 class ParentsSection extends StatelessWidget {
   const ParentsSection({
-    super.key,
+    super.key, this.borderRadius = 48,
   });
+
+  final double borderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -33,16 +35,16 @@ class ParentsSection extends StatelessWidget {
         SizedBox(height: 16.h),
         AuthTextFormField(
           validator: (value) => Validation.validateEmail(value!),
-          borderRadius: 48.r,
-          suffixIcon: AppStrings.emailIcon,
+          borderRadius: borderRadius.r,
+          prefixIcon: AppStrings.emailIcon,
           hint: AppLocalization.loginEmailHint,
           keyboardType: TextInputType.emailAddress,
         ),
         SizedBox(height: 16.h),
         AuthTextFormField(
           validator: (value) => Validation.validatePhone(value!),
-          borderRadius: 48.r,
-          suffixIcon: AppStrings.phoneIcon,
+          borderRadius: borderRadius.r,
+          prefixIcon: AppStrings.phoneIcon,
           hint: AppLocalization.loginPhoneHint,
           keyboardType: TextInputType.phone,
         ),

@@ -52,7 +52,7 @@ class LoginView extends StatelessWidget {
                           AuthTextFormField(
                             validator: (value) => Validation.validateName(value!),
                             borderRadius: 48.r,
-                            suffixIcon: AppStrings.nameIcon,
+                            prefixIcon: AppStrings.nameIcon,
                             hint: AppLocalization.loginHeroNameHint,
                           ),
                           SizedBox(height: 23.h),

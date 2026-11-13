@@ -1,5 +1,6 @@
 
 import 'package:akoun/core/theme/app_colors.dart';
+import 'package:akoun/core/utils/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -7,62 +8,73 @@ import '../../../../../core/utils/app_localization.dart';
 import '../../../../../core/utils/app_strings.dart';
 import 'auth_teacher_type_option.dart';
 
-
 enum TeacherType { male, female }
 
-class AuthTeacherTypeSection extends StatefulWidget {
-  final ValueChanged<TeacherType>? onChanged;
-
-  const AuthTeacherTypeSection({
+class AuthTeacherTypeSection extends FormField<TeacherType> {
+  AuthTeacherTypeSection({
     super.key,
-    this.onChanged,
-  });
+    ValueChanged<TeacherType>? onChanged,
+    FormFieldValidator<TeacherType>? validator,
+    AutovalidateMode autoValidateMode = AutovalidateMode.disabled,
+  }) : super(
+    validator: validator ?? Validation.validateTeacherType,
+    autovalidateMode: autoValidateMode,
+    builder: (state) {
+      void selectType(TeacherType type) {
+        state.didChange(type);
+        onChanged?.call(type);
+      }
 
-  @override
-  State<AuthTeacherTypeSection> createState() =>
-      _AuthTeacherTypeSectionState();
-}
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: AuthTeacherTypeOption(
+                  title: AppLocalization.registerTeacherMale,
+                  subtitle: AppLocalization.registerMaleGender,
+                  image: AppStrings.teacherMaleIcon,
+                  titleColor: AppColors.teacherMale,
+                  isSelected: state.value == TeacherType.male,
+                  onTap: () => selectType(TeacherType.male),
+                ),
+              ),
 
-class _AuthTeacherTypeSectionState
-    extends State<AuthTeacherTypeSection> {
-  TeacherType? selectedType;
+              SizedBox(width: 20.w),
 
-  void _selectType(TeacherType type) {
-    setState(() {
-      selectedType = type;
-    });
-
-    widget.onChanged?.call(type);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: AuthTeacherTypeOption(
-            title: AppLocalization.registerTeacherMale,
-            subtitle: AppLocalization.registerMaleGender,
-            image: AppStrings.teacherMaleIcon,
-            titleColor: AppColors.teacherMale,
-            isSelected: selectedType == TeacherType.male,
-            onTap: () => _selectType(TeacherType.male),
+              Expanded(
+                child: AuthTeacherTypeOption(
+                  title: AppLocalization.registerTeacherFemale,
+                  subtitle: AppLocalization.registerFemaleGender,
+                  image: AppStrings.teacherFemaleIcon,
+                  titleColor: AppColors.teacherFemale,
+                  isSelected: state.value == TeacherType.female,
+                  onTap: () => selectType(TeacherType.female),
+                ),
+              ),
+            ],
           ),
-        ),
 
-        SizedBox(width: 20.w),
+          if (state.hasError) ...[
+            SizedBox(height: 8.h),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8.w),
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: Text(
+                  state.errorText!,
+                  style: TextStyle(
+                    color: Theme.of(state.context).colorScheme.error,
+                    fontSize: 12.sp,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ],
+      );
+    },
+  );
 
-        Expanded(
-          child: AuthTeacherTypeOption(
-            title: AppLocalization.registerTeacherFemale,
-            subtitle: AppLocalization.registerFemaleGender,
-            image: AppStrings.teacherFemaleIcon,
-            titleColor: AppColors.teacherFemale,
-            isSelected: selectedType == TeacherType.female,
-            onTap: () => _selectType(TeacherType.female),
-          ),
-        ),
-      ],
-    );
-  }
 }

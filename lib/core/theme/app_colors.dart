@@ -3,20 +3,25 @@ import 'package:flutter/material.dart';
 
 abstract final class AppColors {
   // Brand / actions
+  /// Splash Screen
   static const Color splashBody = Color(0xFF2670AD);
   static const Color chooseBG = Color(0xFFBBEAFD);
   static const Color chooseBtnRegisterBG = Color(0xFF1978CD);
   static const Color chooseBtnLoginBG = Color(0xFFFCD248);
+
+
   static const Color withe = Color(0xFFFFFFFF);
   static const Color hint = Color(0xFF6B7280);
   static const Color borders = Color(0xFFBDC8D1);
 
+  /// Login Screen
   static const Color loginTxt = Color(0xFF00658D);
   static const Color loginSubTxt = Color(0xFF3E4850);
   static const Color loginParentsTxt = Color(0xFF1B1C15);
   static const Color authContainerBG = Color(0xFFF6F4E7);
   static const Color iconContainerBG = Color(0xFFFCD400);
 
+  /// Register Screen
   static const Color registerGenderTxt = Color(0xFF374151);
   static const Color selectedBorder = Color(0xFFFCD400);
   static const Color waveData = Color(0xFF1E73BE);
@@ -24,7 +29,9 @@ abstract final class AppColors {
   static const Color teacherMale = Color(0xFF3B82F6);
   static const Color teacherFemale = Color(0xFFEC4899);
 
-
+  /// Intro Screen
+  static const Color introText = Color(0xFF0D3253);
+  static const Color introButton = Color(0xFFFCD400);
 
 
   // Button Language in register screen
