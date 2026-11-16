@@ -1,6 +1,6 @@
 import 'package:akoun/core/router/app_router.dart';
 import 'package:akoun/core/theme/app_colors.dart';
-import 'package:akoun/core/utils/app_localization.dart';
+import 'package:akoun/core/utils/l10n_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -36,7 +36,7 @@ class ChooseView extends StatelessWidget {
                   onPressed: () {
                     context.push(AppRouter.registerView);
                   },
-                  text: AppLocalization.chooseSignUp,
+                  text: context.l10n.chooseSignUp,
                   color: AppColors.chooseBtnRegisterBG,
                 ),
                 SizedBox(height: 21.h),
@@ -44,7 +44,7 @@ class ChooseView extends StatelessWidget {
                   onPressed: () {
                     context.push(AppRouter.loginView);
                   },
-                  text: AppLocalization.chooseSignIn,
+                  text: context.l10n.chooseSignIn,
                   color: AppColors.chooseBtnLoginBG,
                 ),
               ],

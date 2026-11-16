@@ -5,8 +5,8 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/router/app_router.dart';
 import '../../../../core/theme/app_text_styles.dart';
-import '../../../../core/utils/app_localization.dart';
 import '../../../../core/utils/app_strings.dart';
+import '../../../../core/utils/l10n_extension.dart';
 
 class SplashView extends StatelessWidget {
   const SplashView({super.key});
@@ -22,7 +22,7 @@ class SplashView extends StatelessWidget {
             right: 38.w,
             child: Center(
               child: Text(
-                AppLocalization.splashBodyTxt,
+                context.l10n.splashBodyTxt,
                 style: AppTextStyles.splashBody,
               ),
             ),
@@ -31,7 +31,7 @@ class SplashView extends StatelessWidget {
             left: 24.w,
             bottom: 65.h,
             child: App3DButton(
-              title: AppLocalization.splashBtnTxt,
+              title: context.l10n.splashBtnTxt,
               icon: AppStrings.splashIcon,
               onPressed: () {
                 context.go(AppRouter.chooseView);

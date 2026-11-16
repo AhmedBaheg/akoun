@@ -8,7 +8,9 @@ class AuthTextFormField extends StatelessWidget {
   final String prefixIcon;
   final String hint;
   final String? Function(String?) validator;
+  final FormFieldSetter<String>? onSaved;
   final TextInputType? keyboardType;
+  final bool obscureText;
 
   const AuthTextFormField({
     super.key,
@@ -16,7 +18,9 @@ class AuthTextFormField extends StatelessWidget {
     required this.prefixIcon,
     required this.hint,
     required this.validator,
+    this.onSaved,
     this.keyboardType,
+    this.obscureText = false,
   });
 
   @override
@@ -30,14 +34,15 @@ class AuthTextFormField extends StatelessWidget {
           textDirection: TextDirection.rtl,
           cursorColor: AppColors.hint,
           validator: validator,
+          onSaved: onSaved,
           keyboardType: keyboardType,
+          obscureText: obscureText,
           textAlign: TextAlign.right,
           decoration: InputDecoration(
             hintText: hint,
             hintStyle: TextStyle(color: AppColors.hint, fontSize: 14.sp),
             filled: true,
             fillColor: AppColors.withe,
-
             prefixIcon: Padding(
               padding: EdgeInsets.only(
                 top: 20.h,

@@ -1,13 +1,11 @@
-import 'package:akoun/features/auth/presentation/view/widgets/auth_teacher_type_section.dart';
 import 'package:akoun/features/intro/presentation/view/widgets/intro_welcome_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../core/theme/app_text_styles.dart';
-import '../../../../core/utils/app_localization.dart';
 import '../../../../core/utils/app_strings.dart';
+import '../../../../core/utils/l10n_extension.dart';
 
 class IntroView extends StatelessWidget {
   const IntroView({super.key});
@@ -15,6 +13,9 @@ class IntroView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final teacherType = GoRouterState.of(context).extra;
+    final isMale = teacherType == null ||
+        !teacherType.toString().toLowerCase().contains('female');
+
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -29,7 +30,7 @@ class IntroView extends StatelessWidget {
         child: Stack(
           children: [
             IntroWelcomeContent(
-              isMale: teacherType == TeacherType.male.toString(),
+              isMale: isMale,
             ),
             Positioned(
               top: 195.h,
@@ -48,7 +49,7 @@ class IntroView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(30.r),
                 ),
                 child: Text(
-                  AppLocalization.introText,
+                  context.l10n.introText,
                   textAlign: TextAlign.right,
                   style: AppTextStyles.introText,
                 ),

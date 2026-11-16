@@ -1,13 +1,23 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../core/utils/app_localization.dart';
 import '../../../../../core/utils/app_strings.dart';
+import '../../../../../core/utils/l10n_extension.dart';
 import '../../../../../core/utils/validation.dart';
 import 'auth_gender_option.dart';
 
 enum Gender { male, female }
+
+extension GenderX on Gender {
+  String get value {
+    switch (this) {
+      case Gender.male:
+        return 'boy';
+      case Gender.female:
+        return 'girl';
+    }
+  }
+}
 
 class AuthGenderSection extends FormField<Gender> {
   AuthGenderSection({
@@ -32,7 +42,7 @@ class AuthGenderSection extends FormField<Gender> {
               Expanded(
                 child: AuthGenderOption(
                   gender: Gender.male,
-                  title: AppLocalization.registerGenderBoy,
+                  title: state.context.l10n.registerGenderBoy,
                   emoji: AppStrings.boyIcon,
                   isSelected: state.value == Gender.male,
                   onTap: () => selectGender(Gender.male),
@@ -42,7 +52,7 @@ class AuthGenderSection extends FormField<Gender> {
               Expanded(
                 child: AuthGenderOption(
                   gender: Gender.female,
-                  title: AppLocalization.registerGenderGirl,
+                  title: state.context.l10n.registerGenderGirl,
                   emoji: AppStrings.girlIcon,
                   isSelected: state.value == Gender.female,
                   onTap: () => selectGender(Gender.female),

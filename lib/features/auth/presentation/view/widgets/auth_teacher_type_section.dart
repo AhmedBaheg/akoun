@@ -1,10 +1,10 @@
 
 import 'package:akoun/core/theme/app_colors.dart';
+import 'package:akoun/core/utils/l10n_extension.dart';
 import 'package:akoun/core/utils/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../core/utils/app_localization.dart';
 import '../../../../../core/utils/app_strings.dart';
 import 'auth_teacher_type_option.dart';
 
@@ -32,8 +32,8 @@ class AuthTeacherTypeSection extends FormField<TeacherType> {
             children: [
               Expanded(
                 child: AuthTeacherTypeOption(
-                  title: AppLocalization.registerTeacherMale,
-                  subtitle: AppLocalization.registerMaleGender,
+                  title: state.context.l10n.registerTeacherMale,
+                  subtitle: state.context.l10n.registerMaleGender,
                   image: AppStrings.teacherMaleIcon,
                   titleColor: AppColors.teacherMale,
                   isSelected: state.value == TeacherType.male,
@@ -45,8 +45,8 @@ class AuthTeacherTypeSection extends FormField<TeacherType> {
 
               Expanded(
                 child: AuthTeacherTypeOption(
-                  title: AppLocalization.registerTeacherFemale,
-                  subtitle: AppLocalization.registerFemaleGender,
+                  title: state.context.l10n.registerTeacherFemale,
+                  subtitle: state.context.l10n.registerFemaleGender,
                   image: AppStrings.teacherFemaleIcon,
                   titleColor: AppColors.teacherFemale,
                   isSelected: state.value == TeacherType.female,

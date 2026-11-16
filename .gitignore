@@ -46,3 +46,4 @@ app.*.map.json
 
 # Widget Preview related
 .widget_preview/
+/lib/features/island/presentation/view/widgets/island_widget.dart

@@ -1,0 +1,223 @@
+{
+  "@@locale": "ar",
+  "introText": "مرحبا بك في أكون ! سأكون معلمك ومساعدك في رحلتك للتعلم وتصبح بطلاً في القراءة",
+  "@introText": {
+    "description": "Intro screen welcome description"
+  },
+  "introTextBtn": "التالي",
+  "@introTextBtn": {
+    "description": "Next button in intro"
+  },
+  "splashBodyTxt": "أكون ... بالقراءة أكون",
+  "@splashBodyTxt": {
+    "description": "Splash tagline"
+  },
+  "splashBtnTxt": "ابدأ المغامرة",
+  "@splashBtnTxt": {
+    "description": "Splash start button"
+  },
+  "chooseSignUp": "إنشاء حساب",
+  "@chooseSignUp": {
+    "description": "Sign up button"
+  },
+  "chooseSignIn": "تسجيل الدخول",
+  "@chooseSignIn": {
+    "description": "Sign in button"
+  },
+  "loginHeader": "!أهلاً بك في أكون",
+  "@loginHeader": {
+    "description": "Login header"
+  },
+  "loginSubHeader": "لنبدأ مغامرة القراءة الممتعة",
+  "@loginSubHeader": {
+    "description": "Login subtitle"
+  },
+  "loginHeroNameTitle": "اسم البطل",
+  "@loginHeroNameTitle": {
+    "description": "Hero name title"
+  },
+  "loginHeroNameHint": "ما اسمك؟",
+  "@loginHeroNameHint": {
+    "description": "Hero name hint"
+  },
+  "loginParentsSectionTitle": "قسم الوالدين",
+  "@loginParentsSectionTitle": {
+    "description": "Parents section title"
+  },
+  "loginEmailHint": "البريد الإلكتروني",
+  "@loginEmailHint": {
+    "description": "Email input hint"
+  },
+  "loginPhoneHint": "رقم الهاتف",
+  "@loginPhoneHint": {
+    "description": "Phone input hint"
+  },
+  "loginStartButton": "هيا بنا ، نبدأ",
+  "@loginStartButton": {
+    "description": "Start button"
+  },
+  "registerChildNameTitle": "اسم الطفل",
+  "@registerChildNameTitle": {
+    "description": "Child name field title"
+  },
+  "registerHeroNameHint": "اكتب اسم الطفل",
+  "@registerHeroNameHint": {
+    "description": "Child name input hint"
+  },
+  "registerAgeTitle": "العمر",
+  "@registerAgeTitle": {
+    "description": "Child age title"
+  },
+  "registerAgeHint": "كم عمرك؟",
+  "@registerAgeHint": {
+    "description": "Child age input hint"
+  },
+  "registerGenderTitle": "النوع",
+  "@registerGenderTitle": {
+    "description": "Gender section title"
+  },
+  "registerGenderBoy": "ولد",
+  "@registerGenderBoy": {
+    "description": "Boy gender option"
+  },
+  "registerGenderGirl": "بنت",
+  "@registerGenderGirl": {
+    "description": "Girl gender option"
+  },
+  "registerWaveDataTitle": "بيانات الموجة",
+  "@registerWaveDataTitle": {
+    "description": "Wave data section title"
+  },
+  "registerWaveDataSubtitle": "اختر من يسجل بياناتك التعليمية",
+  "@registerWaveDataSubtitle": {
+    "description": "Wave data section subtitle"
+  },
+  "registerTeacherMale": "معلم",
+  "@registerTeacherMale": {
+    "description": "Male teacher option"
+  },
+  "registerTeacherFemale": "معلمة",
+  "@registerTeacherFemale": {
+    "description": "Female teacher option"
+  },
+  "registerMaleGender": "ذكر",
+  "@registerMaleGender": {
+    "description": "Male descriptor"
+  },
+  "registerFemaleGender": "أنثى",
+  "@registerFemaleGender": {
+    "description": "Female descriptor"
+  },
+  "registerLanguageTitle": "اختر لغتك",
+  "@registerLanguageTitle": {
+    "description": "Language selection title"
+  },
+  "registerLanguageEnglish": "English",
+  "@registerLanguageEnglish": {
+    "description": "English language name"
+  },
+  "registerLanguageArabic": "العربية",
+  "@registerLanguageArabic": {
+    "description": "Arabic language name"
+  },
+  "registerLanguageUrdu": "اردو",
+  "@registerLanguageUrdu": {
+    "description": "Urdu language name"
+  },
+  "registerLanguageTurkish": "Türkçe",
+  "@registerLanguageTurkish": {
+    "description": "Turkish language name"
+  },
+  "registerDialectTitle": "اختر اللهجة المفضلة",
+  "@registerDialectTitle": {
+    "description": "Dialect selection title"
+  },
+  "registerDialectFusha": "فصحى",
+  "@registerDialectFusha": {
+    "description": "Fusha dialect"
+  },
+  "registerDialectEgyptian": "مصري",
+  "@registerDialectEgyptian": {
+    "description": "Egyptian dialect"
+  },
+  "registerDialectGulf": "خليجي",
+  "@registerDialectGulf": {
+    "description": "Gulf dialect"
+  },
+  "islandGoodMorning": "صباح الخير يا عمر !",
+  "@islandGoodMorning": {
+    "description": "Island header greeting"
+  },
+  "islandContinueJourney": "هيا نكمل رحلتنا التعليمية",
+  "@islandContinueJourney": {
+    "description": "Island header subtitle"
+  },
+  "islandLetters": "جزيرة الحروف",
+  "@islandLetters": {
+    "description": "Letters island title"
+  },
+  "islandMovements": "جزيرة الحركات",
+  "@islandMovements": {
+    "description": "Movements island title"
+  },
+  "islandMadd": "جزيرة حروف المد",
+  "@islandMadd": {
+    "description": "Madd island title"
+  },
+  "islandWords": "جزيرة الكلمات",
+  "@islandWords": {
+    "description": "Words island title"
+  },
+  "islandGrammar": "جزيرة الجمل والقواعد",
+  "@islandGrammar": {
+    "description": "Grammar island title"
+  },
+  "islandTreasure": "الكنز الكبير",
+  "@islandTreasure": {
+    "description": "Grand treasure title"
+  },
+  "continueText": "متابعة",
+  "@continueText": {
+    "description": "Continue action button"
+  },
+  "learnLetter": "تعلم الحرف",
+  "@learnLetter": {
+    "description": "Learn letter screen title"
+  },
+  "rememberTitle": "تذكر",
+  "@rememberTitle": {
+    "description": "Remember screen title"
+  },
+  "okText": "حسنا",
+  "@okText": {
+    "description": "OK action button"
+  },
+  "pronunciationTitle": "تدريب النطق",
+  "@pronunciationTitle": {
+    "description": "Pronunciation training title"
+  },
+  "evaluatePronunciation": "هيا لنقييم النطق",
+  "@evaluatePronunciation": {
+    "description": "Pronunciation evaluation subtitle"
+  },
+  "listeningTitle": "تدريب الاستماع",
+  "@listeningTitle": {
+    "description": "Listening training screen title"
+  },
+  "listeningSubtitle": "استمع ثم اختر الحرف الصحيح",
+  "@listeningSubtitle": {
+    "description": "Listening training subtitle"
+  },
+  "listeningListenPrompt": "استمع لصوت الحرف بالضغط على مكبر الصوت",
+  "@listeningListenPrompt": {
+    "description": "Feedback encouraging child to listen"
+  },
+  "listeningCorrectAnswer": "أحسنت يا بطل! إجابة صحيحة 🌟",
+  "@listeningCorrectAnswer": {
+    "description": "Congratulatory message on correct letter pick"
+  },
+  "listeningWrongAnswer": "حاول مرة أخرى! استمع جيداً للصوت 🤔",
+  "@listeningWrongAnswer": {
+    "description": "Encouraging message on wrong letter pick"
+  }
+}

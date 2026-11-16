@@ -40,4 +40,36 @@ abstract final class AppColors {
   static const Color titleColor = Color(0xFF006F96);
   static const Color unselectedColor = Color(0xFFE5E3D7);
   static const Color shadowColor = Color(0xFFB8C6CE);
+
+  /// Island Screen
+  static const Color islandPillBg = Color(0xFF09579A);
+  static const Color islandPillBorder = Color(0xFF4BB2F0);
+  static const Color islandTitle = Color(0xFF003E58);
+  static const Color islandBadgeBg = Color(0x85FFFFFF);
+  static const Color islandLockBg = Color(0xFF6E7881);
+
+  /// Island Words / Letters Screen
+  static const Color islandWordsBg = Color(0xFFE1EFFB);
+  static const Color islandWordsText = Color(0xFF0B0B74);
+  static const Color islandLetterCardBg = Color(0xFFF9FAFB);
+  static const Color islandLetterActiveBg = Color(0x7354B757);
+  static const Color islandLetterActiveBorder = Color(0xFF006E1C);
+  static const Color islandLetterCheckmark = Color(0xFF1E7E34);
+  static const Color islandLetterCurrentBg = Color(0xFF9EC2D5);
+  static const Color islandContinueBtn = Color(0xFF0B0B74);
+  static const Color primaryButton = Color(0xFF0B0B74);
+
+  /// Learn Letter Screen
+  static const Color learnLetterSpeakerBg = Color(0xFFDCECFB);
+  static const Color learnLetterSpeakerIcon = Color(0xFF1978CD);
+  static const Color learnLetterHighlighted = Color(0xFFFF0707);
+  static const Color learnLetterBorder = Color(0xFFFCD400);
+  static const Color learnLetterDivider = Color(0xFFBDC8D1);
+
+  /// Listening Practice State Colors
+  static const Color listeningWrongCardBg = Color(0xFFF07E84);
+  static const Color listeningWrongCardBorder = Color(0xFFE53935);
+  static const Color listeningWrongText = Color(0xFFFF0000);
+  static const Color listeningCorrectCardBg = Color(0xFFA2D5B1);
+  static const Color listeningCorrectCardBorder = Color(0xFF4ADE80);
 }

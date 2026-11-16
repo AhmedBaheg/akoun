@@ -154,4 +154,133 @@ abstract final class AppTextStyles {
     height: 1.0,
     color: AppColors.withe,
   );
+
+  /// Island Screen
+  static final TextStyle islandGreeting = GoogleFonts.tajawal(
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w800,
+    color: Colors.white,
+    shadows: [
+      Shadow(
+        color: Colors.black.withValues(alpha: 0.35),
+        offset: const Offset(0, 2),
+        blurRadius: 4,
+      ),
+    ],
+  );
+
+  static final TextStyle islandSubtitle = GoogleFonts.tajawal(
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w600,
+    color: Colors.white.withValues(alpha: 0.95),
+    shadows: [
+      Shadow(
+        color: Colors.black.withValues(alpha: 0.35),
+        offset: const Offset(0, 1),
+        blurRadius: 3,
+      ),
+    ],
+  );
+
+  static final TextStyle islandPillText = GoogleFonts.lexend(
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w700,
+    color: Colors.white,
+  );
+
+  static final TextStyle islandCardTitle = GoogleFonts.notoSansArabic(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w800,
+    color: AppColors.islandTitle,
+  );
+
+  /// Island Words / Letters Screen
+  static final TextStyle islandWordsTitle = GoogleFonts.tajawal(
+    fontSize: 28.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColors.islandWordsText,
+  );
+
+  static final TextStyle islandLetter = GoogleFonts.tajawal(
+    fontSize: 44.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColors.islandWordsText,
+  );
+
+  /// Primary App Button
+  static final TextStyle primaryButton = GoogleFonts.tajawal(
+    fontSize: 22.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColors.withe,
+  );
+
+  /// Learn Letter Screen
+  static final TextStyle learnLetterTitle = GoogleFonts.tajawal(
+    fontSize: 28.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColors.islandWordsText,
+  );
+
+  static final TextStyle learnLetterLarge = GoogleFonts.tajawal(
+    fontSize: 100.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColors.islandWordsText,
+    height: 1.1,
+  );
+
+  static final TextStyle learnLetterWord = GoogleFonts.tajawal(
+    fontSize: 36.sp,
+    fontWeight: FontWeight.w700,
+    color: Colors.black,
+  );
+
+  static final TextStyle learnLetterWordHighlight = GoogleFonts.tajawal(
+    fontSize: 36.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColors.learnLetterHighlighted,
+  );
+
+  /// Remember Screen ("تذكر")
+  static final TextStyle rememberCardText = GoogleFonts.tajawal(
+    fontSize: 22.sp,
+    fontWeight: FontWeight.w700,
+    height: 1.6,
+    color: Colors.black,
+  );
+
+  /// Pronunciation Practice Screen ("تدريب النطق")
+  static final TextStyle pronunciationSubtitle = GoogleFonts.tajawal(
+    fontSize: 26.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColors.islandWordsText,
+  );
+
+  /// Listening Practice Screen ("تدريب الاستماع")
+  static final TextStyle listeningSubtitle = GoogleFonts.tajawal(
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w700,
+    color: const Color(0xFF4B6082),
+  );
+
+  static final TextStyle listeningLetterOption = GoogleFonts.tajawal(
+    fontSize: 48.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColors.islandWordsText,
+    height: 1.1,
+  );
+
+  static final TextStyle listeningLetterItem = listeningLetterOption;
+
+  static final TextStyle listeningWrongMessage = GoogleFonts.tajawal(
+    fontSize: 22.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColors.listeningWrongText,
+  );
+
+  static final TextStyle listeningCorrectTitle = GoogleFonts.tajawal(
+    fontSize: 32.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColors.islandWordsText,
+    height: 1.25,
+  );
 }

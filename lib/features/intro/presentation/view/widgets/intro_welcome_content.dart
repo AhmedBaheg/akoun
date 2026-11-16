@@ -1,10 +1,12 @@
 import 'package:akoun/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../../../core/router/app_router.dart';
 import '../../../../../core/theme/app_text_styles.dart';
-import '../../../../../core/utils/app_localization.dart';
 import '../../../../../core/utils/app_strings.dart';
+import '../../../../../core/utils/l10n_extension.dart';
 
 class IntroWelcomeContent extends StatelessWidget {
   const IntroWelcomeContent({super.key, required this.isMale});
@@ -60,9 +62,11 @@ class IntroWelcomeContent extends StatelessWidget {
               ),
               elevation: 0,
             ),
-            onPressed: () {},
+            onPressed: () {
+              context.go(AppRouter.islandView);
+            },
             child: Text(
-              AppLocalization.introTextBtn,
+              context.l10n.introTextBtn,
               style: AppTextStyles.introButton,
             ),
           ),

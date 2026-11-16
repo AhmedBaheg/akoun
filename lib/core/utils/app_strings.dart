@@ -3,9 +3,22 @@ class AppStrings {
   static const String introBg = "assets/images/intro_bg.jpg";
   static const String introFemale = "assets/images/intro_female.png";
   static const String introMale = "assets/images/intro_male.png";
+  static const String teacherMaleWrong = "assets/images/teacher_male_wrong.png";
+  static const String teacherMaleCorrect = "assets/images/teacher_male_correct.png";
   static const String choosePerson = "assets/images/choose_person.png";
   static const String loginBg = "assets/images/login_bg.jpg";
   static const String registerBg = "assets/images/register_bg.jpg";
+
+  // Island Screen Images
+  static const String islandBg = "assets/images/island_bg.png";
+  static const String islandAvatar = "assets/images/island_avatar.png";
+  static const String islandLetters = "assets/images/island_letters.png";
+  static const String islandMovements = "assets/images/island_movements.png";
+  static const String islandMadd = "assets/images/island_madd.png";
+  static const String islandWords = "assets/images/island_words.png";
+  static const String islandGrammar = "assets/images/island_grammar.png";
+  static const String islandTreasure = "assets/images/island_treasure.png";
+  static const String islandBoat = "assets/images/island_boat.png";
 
   // Icons
   static const String splashIcon = "assets/icons/splash_icon.png";
@@ -24,4 +37,10 @@ class AppStrings {
   static const String foshaIcon = "assets/icons/fosha_icon.png";
   static const String khalegyIcon = "assets/icons/khalegy_icon.png";
   static const String masryIcon = "assets/icons/masry_icon.png";
+
+  // Island Screen Icons
+  static const String islandLockIcon = "assets/icons/island_lock.png";
+  static const String islandArrowIcon = "assets/icons/island_arrow.png";
+  static const String islandStarIcon = "assets/icons/island_star.png";
+  static const String islandCoinIcon = "assets/icons/island_coin.png";
 }
