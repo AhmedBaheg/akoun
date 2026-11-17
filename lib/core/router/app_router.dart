@@ -42,20 +42,6 @@ class AppRouter {
         path: islandWordsView,
         builder: (context, state) => const IslandWordsView(),
       ),
-      // GoRoute(
-      //   path: learnLetterView,
-      //   builder: (context, state) {
-      //     final letter = state.extra as String? ?? 'ب';
-      //     return LearnLetterView(letter: letter);
-      //   },
-      // ),
-      // GoRoute(
-      //   path: rememberLetterView,
-      //   builder: (context, state) {
-      //     final letter = state.extra as String? ?? 'ب';
-      //     return RememberLetterView(letter: letter);
-      //   },
-      // ),
       GoRoute(
         path: pronunciationPracticeView,
         builder: (context, state) {

@@ -37,6 +37,7 @@ class AppStrings {
   static const String foshaIcon = "assets/icons/fosha_icon.png";
   static const String khalegyIcon = "assets/icons/khalegy_icon.png";
   static const String masryIcon = "assets/icons/masry_icon.png";
+  static const String avatarGirlIcon = "assets/icons/girl_role_akon.png";
 
   // Island Screen Icons
   static const String islandLockIcon = "assets/icons/island_lock.png";

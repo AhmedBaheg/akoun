@@ -10,6 +10,7 @@ import 'package:akoun/features/auth/domain/use_case/register_use_case.dart';
 import 'package:akoun/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:akoun/features/auth/presentation/view/widgets/auth_container.dart';
 import 'package:akoun/features/auth/presentation/view/widgets/auth_dashed_divider.dart';
+import 'package:akoun/features/auth/presentation/view/widgets/auth_gender_section.dart';
 import 'package:akoun/features/auth/presentation/view/widgets/auth_language_section.dart';
 import 'package:akoun/features/auth/presentation/view/widgets/auth_teacher_type_section.dart';
 import 'package:akoun/features/auth/presentation/view/widgets/language_selection_widget.dart';
@@ -39,7 +40,7 @@ class _RegisterViewState extends State<RegisterView> {
   String _teacherType = '';
   String _childName = '';
   String _age = '';
-  String _gender = '';
+  String _gender = 'boy';
   String _dialect = '';
   String _email = '';
   String _phone = '';
@@ -64,6 +65,8 @@ class _RegisterViewState extends State<RegisterView> {
             log('👁️ [RegisterView.BlocListener] State: ${state.runtimeType}');
 
             if (state is AuthRegisterSuccess) {
+
+
               log('🚀 [RegisterView.BlocListener] Success! Navigating to IntroView with teacherType: $_teacherType');
               context.go(AppRouter.introView, extra: _teacherType);
             } else if (state is AuthFailure) {
@@ -106,7 +109,14 @@ class _RegisterViewState extends State<RegisterView> {
                             RegisterChildDetailsForm(
                               onNameSaved: (value) => _childName = value ?? '',
                               onAgeSaved: (value) => _age = value ?? '',
-                              onGenderChanged: (value) => _gender = value.name,
+                              onGenderSaved: (value) {
+                                if (value != null) {
+                                  _gender = value.value;
+                                }
+                              },
+                              onGenderChanged: (value) {
+                                _gender = value.value;
+                              },
                             ),
 
                             SizedBox(height: 40.h),
@@ -166,7 +176,7 @@ class _RegisterViewState extends State<RegisterView> {
                             SizedBox(height: 23.h),
                             AuthLanguageSection(
                               onChanged: (value) {
-                                _dialect = value.name;
+                                _dialect = value.value;
                               },
                             ),
 
@@ -203,19 +213,19 @@ class _RegisterViewState extends State<RegisterView> {
                               log('   childName: $_childName, age: $_age, gender: $_gender');
                               log('   teacherType: $_teacherType, dialect: $_dialect, language: $_language');
 
-                              context.read<AuthCubit>().register(
-                                    entity: UserEntity(
-                                      email: _email,
-                                      phone: _phone,
-                                      password: _password,
-                                      language: _language,
-                                      childName: _childName,
-                                      age: _age,
-                                      gender: _gender,
-                                      mentorGender: _teacherType,
-                                      dialectMentorUrl: _dialect,
-                                    ),
-                                  );
+                              final entity = UserEntity(
+                                email: _email,
+                                phone: _phone,
+                                password: _password,
+                                language: _language,
+                                childName: _childName,
+                                age: _age,
+                                gender: _gender,
+                                mentorGender: _teacherType,
+                                dialectMentorUrl: _dialect,
+                              );
+
+                              context.read<AuthCubit>().register(entity: entity);
                             } else {
                               log('⚠️ [RegisterView.onPressed] Validation failed!');
                             }

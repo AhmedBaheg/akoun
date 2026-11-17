@@ -11,12 +11,14 @@ import 'auth_text_form_field.dart';
 class RegisterChildDetailsForm extends StatelessWidget {
   final FormFieldSetter<String>? onNameSaved;
   final FormFieldSetter<String>? onAgeSaved;
+  final FormFieldSetter<Gender>? onGenderSaved;
   final ValueChanged<Gender>? onGenderChanged;
 
   const RegisterChildDetailsForm({
     super.key,
     this.onNameSaved,
     this.onAgeSaved,
+    this.onGenderSaved,
     this.onGenderChanged,
   });
 
@@ -71,6 +73,7 @@ class RegisterChildDetailsForm extends StatelessWidget {
 
         SizedBox(height: 8.h),
         AuthGenderSection(
+          onSaved: onGenderSaved,
           onChanged: onGenderChanged,
         ),
       ],

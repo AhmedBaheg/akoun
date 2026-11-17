@@ -22,11 +22,15 @@ extension GenderX on Gender {
 class AuthGenderSection extends FormField<Gender> {
   AuthGenderSection({
     super.key,
+    Gender? initialValue,
     ValueChanged<Gender>? onChanged,
+    FormFieldSetter<Gender>? onSaved,
     FormFieldValidator<Gender>? validator,
     AutovalidateMode autoValidateMode = AutovalidateMode.disabled,
   }) : super(
+    initialValue: initialValue ?? Gender.male,
     validator: validator ?? Validation.validateGender,
+    onSaved: onSaved,
     autovalidateMode: autoValidateMode,
     builder: (state) {
       void selectGender(Gender gender) {

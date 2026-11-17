@@ -8,9 +8,13 @@ import '../../../../../core/utils/l10n_extension.dart';
 import 'island_stat_badge.dart';
 
 class IslandHeaderWidget extends StatelessWidget {
+  final String? childName;
   final String? greeting;
   final String? subtitle;
-  final String avatarPath;
+  final String? avatarPath;
+  final String? avatarUrl;
+  final String? gender;
+  final bool? isGirl;
   final int coins;
   final int stars;
   final VoidCallback? onAvatarTap;
@@ -19,9 +23,13 @@ class IslandHeaderWidget extends StatelessWidget {
 
   const IslandHeaderWidget({
     super.key,
+    this.childName,
     this.greeting,
     this.subtitle,
-    this.avatarPath = AppStrings.islandAvatar,
+    this.avatarPath,
+    this.avatarUrl,
+    this.gender,
+    this.isGirl,
     this.coins = 100,
     this.stars = 0,
     this.onAvatarTap,
@@ -29,9 +37,60 @@ class IslandHeaderWidget extends StatelessWidget {
     this.onStarsAddTap,
   });
 
+  String get _resolvedAvatarAsset {
+    if (avatarPath != null && avatarPath!.isNotEmpty) {
+      return avatarPath!;
+    }
+    final g = (gender ?? '').toLowerCase();
+    final bool checkGirl = isGirl == true ||
+        g == 'female' ||
+        g == 'girl' ||
+        g.contains('female') ||
+        g.contains('girl');
+
+    if (checkGirl) {
+      return AppStrings.avatarGirlIcon;
+    }
+    return AppStrings.islandAvatar;
+  }
+
+  String _resolvedGreeting(BuildContext context) {
+    if (greeting != null && greeting!.isNotEmpty) {
+      return greeting!;
+    }
+    final name = childName?.trim();
+    if (name != null && name.isNotEmpty) {
+      return 'اهلا بيك يا $name !';
+    }
+    return context.l10n.islandGoodMorning;
+  }
+
+  Widget _buildAvatarImage() {
+    final bool hasValidNetworkUrl =
+        avatarUrl != null && avatarUrl!.trim().startsWith('http');
+
+    if (hasValidNetworkUrl) {
+      return Image.network(
+        avatarUrl!,
+        fit: BoxFit.cover,
+        errorBuilder: (context, error, stackTrace) {
+          return Image.asset(
+            _resolvedAvatarAsset,
+            fit: BoxFit.cover,
+          );
+        },
+      );
+    }
+
+    return Image.asset(
+      _resolvedAvatarAsset,
+      fit: BoxFit.cover,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    final effectiveGreeting = greeting ?? context.l10n.islandGoodMorning;
+    final effectiveGreeting = _resolvedGreeting(context);
     final effectiveSubtitle = subtitle ?? context.l10n.islandContinueJourney;
 
     return Directionality(
@@ -39,7 +98,7 @@ class IslandHeaderWidget extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // 1. Avatar with white circular border
+          // 1. Avatar with white circular border & dynamic gender image
           GestureDetector(
             onTap: onAvatarTap,
             child: Container(
@@ -47,10 +106,7 @@ class IslandHeaderWidget extends StatelessWidget {
               height: 73.h,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                border: Border.all(
-                  color: AppColors.withe,
-                  width: 3.w,
-                ),
+                border: Border.all(color: AppColors.withe, width: 3.w),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withValues(alpha: 0.15),
@@ -60,10 +116,7 @@ class IslandHeaderWidget extends StatelessWidget {
                 ],
               ),
               child: ClipOval(
-                child: Image.asset(
-                  avatarPath,
-                  fit: BoxFit.cover,
-                ),
+                child: _buildAvatarImage(),
               ),
             ),
           ),
